@@ -3,6 +3,7 @@
     "dev": "deno run --allow-net --allow-read --allow-env --watch server.ts"
   },
   "imports": {
+    "@/": "./",
     "std/": "https://deno.land/std@0.212.0/"
   },
   "fmt": {
