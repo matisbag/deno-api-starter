@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "dev": "deno run --allow-net --allow-read --allow-env --watch server.ts"
+    "dev": "deno run --allow-net --allow-read --allow-env --unstable-sloppy-imports --allow-ffi=generated/client/libquery_engine-darwin-arm64.dylib.node --watch server.ts"
   },
   "imports": {
     "@/": "./",
