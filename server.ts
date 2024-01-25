@@ -1,6 +1,6 @@
 import { Application } from '@/deps.ts';
 import router from '@/routes/index.ts';
-import fourZeroFour from './middlewares/404Middleware.ts';
+import fourZeroFourMiddleware from './middlewares/404Middleware.ts';
 // TODO: add error handling ?
 
 const app = new Application();
@@ -16,7 +16,7 @@ app.addEventListener('listen', ({ hostname, port, secure }) => {
 // setup middleware
 app.use(router.routes());
 app.use(router.allowedMethods());
-app.use(fourZeroFour);
+app.use(fourZeroFourMiddleware);
 
 // start server
 await app.listen({ port, hostname });
