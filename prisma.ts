@@ -1,5 +1,5 @@
 import { type PrismaClient } from './generated/client/index.d.ts';
-import { createRequire } from 'node:module';
+import { createRequire } from '@/deps.ts';
 const require = createRequire(import.meta.url);
 const Prisma = require('./generated/client/index.js');
 
