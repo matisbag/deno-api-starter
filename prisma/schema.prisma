@@ -16,4 +16,6 @@ model Dinosaur {
   id          Int     @id @default(autoincrement())
   name        String  @unique
   description String
+
+  @@map("dinosaurs")
 }
