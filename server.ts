@@ -1,14 +1,11 @@
 import { Application } from '@/deps.ts';
-import prisma from '@/prisma.ts';
+import router from '@/routes/index.ts';
+// TODO: add 404 ?
+// TODO: add error handling ?
 
 const app = new Application();
 const port = Number(Deno.env.get('PORT'));
 const hostname = Deno.env.get('HOSTNAME');
-
-app.use(async (ctx) => {
-  const dinosaurs = await prisma.dinosaur.findMany();
-  ctx.response.body = dinosaurs;
-});
 
 app.addEventListener('listen', ({ hostname, port, secure }) => {
   console.log(
@@ -16,4 +13,9 @@ app.addEventListener('listen', ({ hostname, port, secure }) => {
   );
 });
 
+// setup middleware
+app.use(router.routes());
+app.use(router.allowedMethods());
+
+// start server
 await app.listen({ port, hostname });
