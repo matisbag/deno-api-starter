@@ -1,6 +1,6 @@
 import { Application } from '@/deps.ts';
 import router from '@/routes/index.ts';
-import fourZeroFour from '@/middlewares/404.ts';
+import fourZeroFour from './middlewares/404Middleware.ts';
 // TODO: add error handling ?
 
 const app = new Application();
