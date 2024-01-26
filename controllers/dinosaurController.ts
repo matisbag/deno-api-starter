@@ -15,7 +15,7 @@ export const findDinosaur = async ({
 }: RouterContext<string>) => {
   const { id } = params;
 
-  const dinosaur = await prisma.dinosaur.findUnique({
+  const dinosaur = await prisma.dinosaur.findUniqueOrThrow({
     where: {
       id: Number(id),
     },
