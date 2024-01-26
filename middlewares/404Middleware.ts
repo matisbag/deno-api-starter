@@ -1,8 +1,7 @@
-import { Context } from '../deps.ts';
+import { Context, Status } from '@/deps.ts';
 
 const fourZeroFourMiddleware = (ctx: Context) => {
-  ctx.response.status = 404;
-  ctx.response.body = { message: 'Route not Found !' };
+  ctx.throw(Status.NotFound, 'Route not Found !');
 };
 
 export default fourZeroFourMiddleware;

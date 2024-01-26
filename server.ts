@@ -1,7 +1,7 @@
 import { Application } from '@/deps.ts';
 import router from '@/routes/index.ts';
-import fourZeroFourMiddleware from './middlewares/404Middleware.ts';
-// TODO: add error handling ?
+import fourZeroFourMiddleware from '@/middlewares/404Middleware.ts';
+import errorHandlerMiddleware from '@/middlewares/errorHandlerMiddleware.ts';
 
 const app = new Application();
 const port = Number(Deno.env.get('PORT'));
@@ -14,6 +14,7 @@ app.addEventListener('listen', ({ hostname, port, secure }) => {
 });
 
 // setup middleware
+app.use(errorHandlerMiddleware);
 app.use(router.routes());
 app.use(router.allowedMethods());
 app.use(fourZeroFourMiddleware);
