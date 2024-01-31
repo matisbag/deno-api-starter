@@ -7,7 +7,7 @@
   },
   "imports": {
     "@/": "./",
-    "std/": "https://deno.land/std@0.212.0/"
+    "std/": "https://deno.land/std@0.213.0/"
   },
   "fmt": {
     "singleQuote": true

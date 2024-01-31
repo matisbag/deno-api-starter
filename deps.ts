@@ -10,12 +10,12 @@ export {
   isHttpError,
   Router,
   Status,
-} from 'https://deno.land/x/oak@v12.6.2/mod.ts';
+} from 'https://deno.land/x/oak@v13.0.0/mod.ts';
 export type {
   Context,
   Next,
   RouterContext,
-} from 'https://deno.land/x/oak@v12.6.2/mod.ts';
+} from 'https://deno.land/x/oak@v13.0.0/mod.ts';
 
 export { createRequire } from 'node:module';
 

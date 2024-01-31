@@ -28,7 +28,7 @@ export const createDinosaur = async ({
   request,
   response,
 }: RouterContext<string>) => {
-  const { name, description } = await request.body().value;
+  const { name, description } = await request.body.json();
 
   const dinosaur = await prisma.dinosaur.create({
     data: {
@@ -46,7 +46,7 @@ export const updateDinosaur = async ({
   response,
 }: RouterContext<string>) => {
   const { id } = params;
-  const { name, description } = await request.body().value;
+  const { name, description } = await request.body.json();
 
   const dinosaur = await prisma.dinosaur.update({
     where: { id: Number(id) },
