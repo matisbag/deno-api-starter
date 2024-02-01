@@ -2,11 +2,54 @@
   "version": "3",
   "packages": {
     "specifiers": {
+      "npm:@bugsnag/js@7.22.3": "npm:@bugsnag/js@7.22.3",
       "npm:@types/node": "npm:@types/node@18.16.19",
       "npm:prisma": "npm:prisma@5.8.1",
       "npm:prisma@^5.8.1": "npm:prisma@5.8.1"
     },
     "npm": {
+      "@bugsnag/browser@7.22.3": {
+        "integrity": "sha512-TWQSdsCqzxEVmaKzbtmqoBLWF58yjXi/ScC+6L5VNgSj+62jkIQuw5Evjs+7kLQX8WCnaG6XLiDmUJmPx6ZUrA==",
+        "dependencies": {
+          "@bugsnag/core": "@bugsnag/core@7.19.0"
+        }
+      },
+      "@bugsnag/core@7.19.0": {
+        "integrity": "sha512-2KGwdaLD9PhR7Wk7xPi3jGuGsKTatc/28U4TOZIDU3CgC2QhGjubwiXSECel5gwxhZ3jACKcMKSV2ovHhv1NrA==",
+        "dependencies": {
+          "@bugsnag/cuid": "@bugsnag/cuid@3.0.2",
+          "@bugsnag/safe-json-stringify": "@bugsnag/safe-json-stringify@6.0.0",
+          "error-stack-parser": "error-stack-parser@2.1.4",
+          "iserror": "iserror@0.0.2",
+          "stack-generator": "stack-generator@2.0.10"
+        }
+      },
+      "@bugsnag/cuid@3.0.2": {
+        "integrity": "sha512-cIwzC93r3PQ/INeuwtZwkZIG2K8WWN0rRLZQhu+mr48Ay+i6sEki4GYfTsflse7hZ1BeDWrNb/Q9vgY3B31xHQ==",
+        "dependencies": {}
+      },
+      "@bugsnag/js@7.22.3": {
+        "integrity": "sha512-SAZEElVlmQgZBPLbTdMAyFD2Pp1mP4t3bv+GmDVGSgBi4W6doKQVk0J/K9f5+JGw8fEh9AJHRlyub3XnlGI6Zw==",
+        "dependencies": {
+          "@bugsnag/browser": "@bugsnag/browser@7.22.3",
+          "@bugsnag/node": "@bugsnag/node@7.22.3"
+        }
+      },
+      "@bugsnag/node@7.22.3": {
+        "integrity": "sha512-vDXu0mrduonyCjUkTp+zKSh1WHAtA2VjB49xK5s1f/HnTASiJvzUOQBRXrkqaj37sndYHUSMxUCPvLawyc75nA==",
+        "dependencies": {
+          "@bugsnag/core": "@bugsnag/core@7.19.0",
+          "byline": "byline@5.0.0",
+          "error-stack-parser": "error-stack-parser@2.1.4",
+          "iserror": "iserror@0.0.2",
+          "pump": "pump@3.0.0",
+          "stack-generator": "stack-generator@2.0.10"
+        }
+      },
+      "@bugsnag/safe-json-stringify@6.0.0": {
+        "integrity": "sha512-htzFO1Zc57S8kgdRK9mLcPVTW1BY2ijfH7Dk2CeZmspTWKdKqSo1iwmqrq2WtRjFlo8aRZYgLX0wFrDXF/9DLA==",
+        "dependencies": {}
+      },
       "@prisma/debug@5.8.1": {
         "integrity": "sha512-tjuw7eA0Us3T42jx9AmAgL58rzwzpFGYc3R7Y4Ip75EBYrKMBA1YihuWMcBC92ILmjlQ/u3p8VxcIE0hr+fZfg==",
         "dependencies": {}
@@ -42,11 +85,58 @@
         "integrity": "sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==",
         "dependencies": {}
       },
+      "byline@5.0.0": {
+        "integrity": "sha512-s6webAy+R4SR8XVuJWt2V2rGvhnrhxN+9S15GNuTK3wKPOXFF6RNc+8ug2XhH+2s4f+uudG4kUVYmYOQWL2g0Q==",
+        "dependencies": {}
+      },
+      "end-of-stream@1.4.4": {
+        "integrity": "sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q==",
+        "dependencies": {
+          "once": "once@1.4.0"
+        }
+      },
+      "error-stack-parser@2.1.4": {
+        "integrity": "sha512-Sk5V6wVazPhq5MhpO+AUxJn5x7XSXGl1R93Vn7i+zS15KDVxQijejNCrz8340/2bgLBjR9GtEG8ZVKONDjcqGQ==",
+        "dependencies": {
+          "stackframe": "stackframe@1.3.4"
+        }
+      },
+      "iserror@0.0.2": {
+        "integrity": "sha512-oKGGrFVaWwETimP3SiWwjDeY27ovZoyZPHtxblC4hCq9fXxed/jasx+ATWFFjCVSRZng8VTMsN1nDnGo6zMBSw==",
+        "dependencies": {}
+      },
+      "once@1.4.0": {
+        "integrity": "sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==",
+        "dependencies": {
+          "wrappy": "wrappy@1.0.2"
+        }
+      },
       "prisma@5.8.1": {
         "integrity": "sha512-N6CpjzECnUHZ5beeYpDzkt2rYpEdAeqXX2dweu6BoQaeYkNZrC/WJHM+5MO/uidFHTak8QhkPKBWck1o/4MD4A==",
         "dependencies": {
           "@prisma/engines": "@prisma/engines@5.8.1"
         }
+      },
+      "pump@3.0.0": {
+        "integrity": "sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==",
+        "dependencies": {
+          "end-of-stream": "end-of-stream@1.4.4",
+          "once": "once@1.4.0"
+        }
+      },
+      "stack-generator@2.0.10": {
+        "integrity": "sha512-mwnua/hkqM6pF4k8SnmZ2zfETsRUpWXREfA/goT8SLCV4iOFa4bzOX2nDipWAZFPTjLvQB82f5yaodMVhK0yJQ==",
+        "dependencies": {
+          "stackframe": "stackframe@1.3.4"
+        }
+      },
+      "stackframe@1.3.4": {
+        "integrity": "sha512-oeVtt7eWQS+Na6F//S4kJ2K2VbRlS9D43mAlMyVpVWovy9o+jfgH8O9agzANzaiLjclA0oYzUXEM4PurhSUChw==",
+        "dependencies": {}
+      },
+      "wrappy@1.0.2": {
+        "integrity": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==",
+        "dependencies": {}
       }
     }
   },

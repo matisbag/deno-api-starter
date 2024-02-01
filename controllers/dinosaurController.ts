@@ -1,5 +1,5 @@
 import prisma from '@/prisma.ts';
-import { RouterContext } from '@/deps.ts';
+import { RouterContext, Status } from '@/deps.ts';
 
 export const getAllDinosaurs = async ({
   response,
@@ -12,16 +12,21 @@ export const getAllDinosaurs = async ({
 export const findDinosaur = async ({
   params,
   response,
+  throw: throw_,
 }: RouterContext<string>) => {
   const { id } = params;
 
-  const dinosaur = await prisma.dinosaur.findUniqueOrThrow({
-    where: {
-      id: Number(id),
-    },
-  });
+  try {
+    const dinosaur = await prisma.dinosaur.findUniqueOrThrow({
+      where: {
+        id: Number(id),
+      },
+    });
 
-  response.body = dinosaur;
+    response.body = dinosaur;
+  } catch {
+    throw_(Status.NotFound, 'Dinosaur not found');
+  }
 };
 
 export const createDinosaur = async ({

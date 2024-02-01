@@ -19,5 +19,7 @@ export type {
 
 export { createRequire } from 'node:module';
 
+export { default as Bugsnag } from 'npm:@bugsnag/js@7.22.3';
+
 // Load environment variables
 import 'std/dotenv/load.ts';
