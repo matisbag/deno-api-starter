@@ -1,10 +1,9 @@
-import prisma from '@/prisma.ts';
 import { RouterContext, Status } from '@/deps.ts';
 
 export const getAllDinosaurs = async ({
   response,
 }: RouterContext<string>) => {
-  const dinosaurs = await prisma.dinosaur.findMany();
+  const dinosaurs = [{}];
 
   response.body = dinosaurs;
 };
@@ -17,11 +16,7 @@ export const findDinosaur = async ({
   const { id } = params;
 
   try {
-    const dinosaur = await prisma.dinosaur.findUniqueOrThrow({
-      where: {
-        id: Number(id),
-      },
-    });
+    const dinosaur = {};
 
     response.body = dinosaur;
   } catch {
@@ -35,12 +30,7 @@ export const createDinosaur = async ({
 }: RouterContext<string>) => {
   const { name, description } = await request.body.json();
 
-  const dinosaur = await prisma.dinosaur.create({
-    data: {
-      name,
-      description,
-    },
-  });
+  const dinosaur = {};
 
   response.body = dinosaur;
 };
@@ -53,13 +43,7 @@ export const updateDinosaur = async ({
   const { id } = params;
   const { name, description } = await request.body.json();
 
-  const dinosaur = await prisma.dinosaur.update({
-    where: { id: Number(id) },
-    data: {
-      name,
-      description,
-    },
-  });
+  const dinosaur = {};
 
   response.body = dinosaur;
 };
@@ -70,11 +54,7 @@ export const deleteDinosaur = async ({
 }: RouterContext<string>) => {
   const { id } = params;
 
-  const dinosaur = await prisma.dinosaur.delete({
-    where: {
-      id: Number(id),
-    },
-  });
+  const dinosaur = {};
 
   response.body = dinosaur;
 };

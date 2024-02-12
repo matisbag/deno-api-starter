@@ -1,9 +1,7 @@
 {
   "tasks": {
-    "dev": "deno run -A --unstable-sloppy-imports --allow-ffi=generated/client/libquery_engine-darwin-arm64.dylib.node --watch server.ts",
-    "prod": "deno run -A --unstable-sloppy-imports --allow-ffi=generated/client/libquery_engine-darwin-arm64.dylib.node server.ts",
-    "prisma:deploy": "deno run -A npm:prisma migrate deploy",
-    "prisma:dev": "deno run -A npm:prisma migrate dev"
+    "dev": "deno run -A --watch server.ts",
+    "prod": "deno run -A server.ts"
   },
   "imports": {
     "@/": "./",
