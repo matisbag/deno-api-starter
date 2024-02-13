@@ -1,7 +1,8 @@
 {
   "tasks": {
     "dev": "deno run -A --watch server.ts",
-    "prod": "deno run -A server.ts"
+    "prod": "deno run -A server.ts",
+    "migrate": "deno run -A ./db/migrate.ts"
   },
   "imports": {
     "@/": "./",
