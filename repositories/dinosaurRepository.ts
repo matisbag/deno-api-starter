@@ -28,16 +28,29 @@ class DinosaurRepository {
   }
 
   async create(dinosaur: Dinosaur): Promise<Dinosaur> {
-    const { rows } = await client.execute(
-      `insert into dinosaurs (name, description) values (?, ?) RETURNING *`,
-      [dinosaur.name, dinosaur.description],
-    );
+    const createdDinosaur = await client.transaction(async (conn) => {
+      const { affectedRows, lastInsertId } = await conn.execute(
+        `insert into dinosaurs (name, description) values (?, ?)`,
+        [dinosaur.name, dinosaur.description],
+      );
 
-    if (!rows || !rows.length) {
-      throw new Error('Failed to create dinosaur');
-    }
+      if (!affectedRows) {
+        throw new Error('Failed to create dinosaur');
+      }
 
-    return rows[0];
+      const { rows } = await conn.execute(
+        `select * from dinosaurs where id = ?`,
+        [lastInsertId],
+      );
+
+      if (!rows || !rows.length) {
+        throw new Error('Failed to retrieve dinosaur');
+      }
+
+      return rows[0];
+    });
+
+    return createdDinosaur;
   }
 
   async update(id: number, dinosaur: Dinosaur): Promise<Dinosaur> {
