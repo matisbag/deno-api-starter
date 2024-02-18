@@ -17,7 +17,7 @@ class DinosaurRepository {
     return dinosaur[0] || null;
   }
 
-  async getByIdOrThow(id: number): Promise<Dinosaur> {
+  async getByIdOrThrow(id: number): Promise<Dinosaur> {
     const dinosaur = await this.getById(id);
 
     if (!dinosaur) {
@@ -59,7 +59,7 @@ class DinosaurRepository {
       [dinosaur.name, dinosaur.description, id],
     );
 
-    const updatedDinosaur = await this.getByIdOrThow(id);
+    const updatedDinosaur = await this.getByIdOrThrow(id);
 
     return updatedDinosaur;
   }
