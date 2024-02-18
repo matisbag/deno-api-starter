@@ -10,12 +10,12 @@ export {
   isHttpError,
   Router,
   Status,
-} from 'https://deno.land/x/oak@v13.0.0/mod.ts';
+} from 'https://deno.land/x/oak@v13.2.5/mod.ts';
 export type {
   Context,
   Next,
   RouterContext,
-} from 'https://deno.land/x/oak@v13.0.0/mod.ts';
+} from 'https://deno.land/x/oak@v13.2.5/mod.ts';
 
 export { Client } from 'https://deno.land/x/mysql@v2.12.1/mod.ts';
 
